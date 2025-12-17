@@ -15,15 +15,16 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://physical-ai-book.example.com',
+  url: 'https://mussawirsohail.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Hackathon_1_By_Mussawir/docs/',
+  baseUrl: '/AI_Book_Hackathon/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'physical-ai', // Usually your GitHub org/user name.
-  projectName: 'humanoid-robotics-book', // Usually your repo name.
+  organizationName: 'mussawirsohail', // Usually your GitHub org/user name.
+  projectName: 'AI_Book_Hackathon', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
 
@@ -44,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/physical-ai/humanoid-robotics-book/',
+            'https://github.com/mussawirsohail/AI_Book_Hackathon/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +56,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/physical-ai/humanoid-robotics-book/',
+            'https://github.com/mussawirsohail/AI_Book_Hackathon/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -87,13 +88,13 @@ const config: Config = {
           position: 'left',
           label: 'Modules',
         },
-        {to: '/docs/module-1-the-robotic-nervous-system/intro', label: 'Module 1', position: 'left'},
-        {to: '/docs/module-2-the-digital-twin/intro', label: 'Module 2', position: 'left'},
-        {to: '/docs/module-3-the-ai-robot-brain/intro', label: 'Module 3', position: 'left'},
-        {to: '/docs/module-4-vision-language-action/intro', label: 'Module 4', position: 'left'},
+        {to: '/docs/modules/module-1-ros2/lesson-1-introduction-to-ros2', label: 'Module 1', position: 'left'},
+        {to: '/docs/modules/module-2-digital-twin/lesson-1-gazebo-simulation', label: 'Module 2', position: 'left'},
+        {to: '/docs/modules/module-3-ai-brain/lesson-1-introduction-to-isaac', label: 'Module 3', position: 'left'},
+        {to: '/docs/modules/module-4-vla/lesson-1-introduction-to-vla', label: 'Module 4', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/physical-ai/humanoid-robotics-book',
+          href: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
           label: 'GitHub',
           position: 'right',
         },
@@ -106,20 +107,20 @@ const config: Config = {
           title: 'Modules',
           items: [
             {
-              label: 'The Robotic Nervous System',
-              to: '/docs/module-1-the-robotic-nervous-system/intro',
+              label: 'Module 1: ROS 2',
+              to: '/docs/modules/module-1-ros2/lesson-1-introduction-to-ros2',
             },
             {
-              label: 'The Digital Twin',
-              to: '/docs/module-2-the-digital-twin/intro',
+              label: 'Module 2: Digital Twin',
+              to: '/docs/modules/module-2-digital-twin/lesson-1-gazebo-simulation',
             },
             {
-              label: 'The AI-Robot Brain',
-              to: '/docs/module-3-the-ai-robot-brain/intro',
+              label: 'Module 3: AI Brain',
+              to: '/docs/modules/module-3-ai-brain/lesson-1-introduction-to-isaac',
             },
             {
-              label: 'Vision-Language-Action',
-              to: '/docs/module-4-vision-language-action/intro',
+              label: 'Module 4: Vision-Language-Action',
+              to: '/docs/modules/module-4-vla/lesson-1-introduction-to-vla',
             },
           ],
         },
@@ -128,11 +129,11 @@ const config: Config = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/physical-ai',
+              href: 'https://discord.gg/physical-ai',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/physical_ai',
+              href: 'https://twitter.com/physicalai',
             },
           ],
         },
@@ -141,12 +142,12 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/physical-ai/humanoid-robotics-book',
+              href: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Project. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics. All rights reserved.`,
     },
     prism: {
       theme: prismThemes.github,

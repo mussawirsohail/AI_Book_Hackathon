@@ -1,5 +1,5 @@
 {
-  "homepage": "https://mussawirsohail.github.io/AI_Hackathon",
+  "homepage": "https://mussawirsohail.github.io/AI_Book_Hackathon",
   "name": "docs",
   "version": "0.0.0",
   "private": true,
@@ -13,8 +13,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "dev": "vite",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "docusaurus deploy"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

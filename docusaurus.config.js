@@ -20,15 +20,16 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://physical-ai-book.example.com',
+  url: 'https://mussawirsohail.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/AI_Book_Hackathon/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-org', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-book', // Usually your repo name.
+  organizationName: 'mussawirsohail', // Usually your GitHub org/user name.
+  projectName: 'AI_Book_Hackathon', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
@@ -48,11 +49,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-org/physical-ai-book/edit/main/',
+            'https://github.com/mussawirsohail/AI_Book_Hackathon/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -63,7 +64,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-org/physical-ai-book/edit/main/',
+            'https://github.com/mussawirsohail/AI_Book_Hackathon/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -100,7 +101,7 @@ const config = {
           {to: '/docs/intro', label: 'Book', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/your-username/physical-ai-book',
+            href: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
             label: 'GitHub',
             position: 'right',
           },
@@ -117,12 +118,12 @@ const config = {
                 to: '/docs/intro',
               },
               {
-                label: 'ROS 2 Framework',
-                to: '/docs/ros2',
+                label: 'Module 1: ROS 2',
+                to: '/docs/modules/module-1-ros2/lesson-1-introduction-to-ros2',
               },
               {
-                label: 'Humanoid Robotics',
-                to: '/docs/humanoid',
+                label: 'Module 2: Digital Twin',
+                to: '/docs/modules/module-2-digital-twin/lesson-1-gazebo-simulation',
               },
             ],
           },
@@ -131,15 +132,15 @@ const config = {
             items: [
               {
                 label: 'Physical AI Concepts',
-                to: '/docs/physical-ai',
+                to: '/docs/modules/module-3-ai-brain/lesson-1-introduction-to-isaac',
               },
               {
                 label: 'Simulation Environments',
-                to: '/docs/simulation',
+                to: '/docs/modules/module-2-digital-twin/lesson-1-gazebo-simulation',
               },
               {
                 label: 'Case Studies',
-                to: '/docs/case-studies',
+                to: '/docs/modules/module-3-advanced/lesson-2-case-studies',
               },
             ],
           },
@@ -148,7 +149,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/your-username/physical-ai-book',
+                href: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
               },
               {
                 label: 'Discord',
