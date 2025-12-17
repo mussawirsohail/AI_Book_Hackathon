@@ -6,18 +6,11 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Physical AI & Humanoid Robotics',
-  tagline: 'Your Complete Guide to Physical AI & Humanoid Robotics',
+  title: 'AI Book Hackathon',
+  tagline: 'Welcome to AI Book Hackathon!',
   favicon: 'img/favicon.ico',
-
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
 
   // Set the production url of your site here
   url: 'https://mussawirsohail.github.io',
@@ -32,7 +25,6 @@ const config = {
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
-  onBrokenAnchors: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -45,33 +37,17 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/mussawirsohail/AI_Book_Hackathon/edit/main/',
+          editUrl: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/mussawirsohail/AI_Book_Hackathon/edit/main/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -82,13 +58,10 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
-      colorMode: {
-        respectPrefersColorScheme: true,
-      },
       navbar: {
-        title: 'Physical AI & Humanoid Robotics',
+        title: 'AI Book Hackathon',
         logo: {
-          alt: 'Physical AI & Humanoid Robotics Logo',
+          alt: 'AI Book Hackathon Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -96,10 +69,8 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Modules',
+            label: 'Docs',
           },
-          {to: '/docs/intro', label: 'Book', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
             label: 'GitHub',
@@ -111,36 +82,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Documentation',
+            title: 'Docs',
             items: [
               {
                 label: 'Introduction',
                 to: '/docs/intro',
-              },
-              {
-                label: 'Module 1: ROS 2',
-                to: '/docs/modules/module-1-ros2/lesson-1-introduction-to-ros2',
-              },
-              {
-                label: 'Module 2: Digital Twin',
-                to: '/docs/modules/module-2-digital-twin/lesson-1-gazebo-simulation',
-              },
-            ],
-          },
-          {
-            title: 'Resources',
-            items: [
-              {
-                label: 'Physical AI Concepts',
-                to: '/docs/modules/module-3-ai-brain/lesson-1-introduction-to-isaac',
-              },
-              {
-                label: 'Simulation Environments',
-                to: '/docs/modules/module-2-digital-twin/lesson-1-gazebo-simulation',
-              },
-              {
-                label: 'Case Studies',
-                to: '/docs/modules/module-3-advanced/lesson-2-case-studies',
               },
             ],
           },
@@ -148,21 +94,30 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/physical-ai',
+                href: 'https://discordapp.com/invite/docusaurus',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/physicalai',
+                href: 'https://twitter.com/docusaurus',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/mussawirsohail/AI_Book_Hackathon',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics. All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} AI Book Hackathon. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
