@@ -82,10 +82,14 @@ const Chatbot = () => {
     try {
       // Call the API service
       const response = await chatAPI.sendMessage(inputValue);
+      console.log('Full response received:', response); // Debug log
+
+      // Since our backend returns just the response text (not an object), we can use it directly
+      const responseText = typeof response === 'string' ? response : JSON.stringify(response);
 
       const botMessage = {
         id: (Date.now() + 1).toString(),
-        text: response.response,
+        text: responseText,
         sender: 'bot',
         timestamp: new Date()
       };
@@ -93,9 +97,10 @@ const Chatbot = () => {
       setMessages(prev => [...prev, botMessage]);
       setHasUnreadMessage(true);
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error('Error sending message:', error); // Surface real error in console
+      console.error('Error details:', error.message || error); // More detailed error info
 
-      // Add error message to chat
+      // Add error message to chat (generic for users)
       const errorMessage = {
         id: (Date.now() + 1).toString(),
         text: 'Sorry, I encountered an error processing your request. Please try again.',
@@ -236,10 +241,10 @@ const Chatbot = () => {
                   borderColor: '#444',
                 },
                 '&:hover .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#6a1b9a',
+                  borderColor: '',
                 },
                 '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#9c27b0',
+                  borderColor: '',
                 }
               },
               endAdornment: (

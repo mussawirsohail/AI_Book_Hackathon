@@ -1,45 +1,33 @@
-// API service for the Physical AI & Humanoid Robotics RAG chatbot
-// This will connect to the backend API that's specialized for Physical AI & Humanoid Robotics content
+// API service to connect the frontend chatbot to the deployed backend API
+// This connects to the backend deployed on Hugging Face Spaces
 
-// For Docusaurus, we'll define the base URL directly
-// You can change this to point to your deployed backend
-const API_BASE_URL = 'https://mussawirsoomro5-physical-ai.hf.space/api/v1';
-
-// Create a request helper function
-const request = async (endpoint, options = {}) => {
-  const url = `${API_BASE_URL}${endpoint}`;
-
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-    ...options,
-  };
-
-  try {
-    const response = await fetch(url, config);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error(`API request failed: ${url}`, error);
-    throw error;
-  }
-};
+// Backend URL for the deployed backend on Hugging Face Spaces
+const BACKEND_URL = 'https://mussawirsoomro5-physical-ai-and-humanoid.hf.space/chat';
 
 // Chat API calls
 export const chatAPI = {
-  sendMessage: (message, contextText) => {
-    return request('/chat', {
-      method: 'POST',
-      body: JSON.stringify({
-        message,
-        context_text: contextText || null
-      })
-    });
+  sendMessage: async (message) => {
+    try {
+      // Making a request to the backend API endpoint
+      const response = await fetch(BACKEND_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: message })
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`HTTP error! status: ${response.status}, details: ${errorText}`);
+      }
+
+      const data = await response.json();
+      // The backend returns { response: "<AI_response_text>" }
+      return data.response; // Return only the response text as expected by the UI
+    } catch (error) {
+      console.error('Error communicating with backend API:', error);
+      throw error;
+    }
   }
 };

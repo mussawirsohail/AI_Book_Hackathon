@@ -35,7 +35,7 @@ DEBUG=False
 
 ```bash
 # frontend/.env
-REACT_APP_API_URL=https://mussawirsoomro5-physical-ai.hf.space/api/v1
+REACT_APP_API_URL=https://mussawirsoomro5-physical-ai.hf.space
 REACT_APP_AUTH_URL=https://mussawirsoomro5-physical-ai.hf.space
 ```
 

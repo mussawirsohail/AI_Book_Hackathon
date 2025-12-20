@@ -833,7 +833,7 @@ export const Profile = () => {
 // src/services/api.ts
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_API_URL || 'https://mussawirsoomro5-physical-ai.hf.space/api/v1';
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://mussawirsoomro5-physical-ai.hf.space';
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,
